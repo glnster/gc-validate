@@ -23,18 +23,18 @@ if ( is_user_logged_in() ) {
 
     //echo 'fid in page php: ' . $fid;
     
-    if ( $wpdb->query("SELECT * FROM `thi11wp_rg_lead_detail` WHERE value='$user_email'") ) { 
+    if ( $wpdb->query("SELECT * FROM `°°°°°_rg_lead_detail` WHERE value='$user_email'") ) { 
 	    /*Found a matching email. That means they have already submitted an entry.
 	      Now see if they're allowed to redo and submit an updated one. */	 
 
 	    
-	    $lid = $wpdb->get_row("SELECT * FROM `thi11wp_rg_lead_detail` WHERE value='$user_email' AND form_id='$fid'", ARRAY_A);
+	    $lid = $wpdb->get_row("SELECT * FROM `°°°°°_rg_lead_detail` WHERE value='$user_email' AND form_id='$fid'", ARRAY_A);
 	    $lead_id = $lid['lead_id'];
 	   //echo ' lid in php:' .$lead_id;
 
 
 	    //check if they're in pending/correction status or not
-	    $resub_row = $wpdb->get_row("SELECT * FROM `thi11wp_rg_lead_detail` WHERE field_number=140 AND lead_id=$lead_id", ARRAY_A);
+	    $resub_row = $wpdb->get_row("SELECT * FROM `°°°°°_rg_lead_detail` WHERE field_number=140 AND lead_id=$lead_id", ARRAY_A);
 	    $can_resub = $resub_row['value'];
 	    //echo $user_email. ' can resub=' .$can_resub;
 	    
